@@ -14,10 +14,12 @@ class DragDropWidget(QWidget):
     def init_ui(self):
         self.setWindowTitle("NCM转换器")
         self.setGeometry(100, 100, 400, 400)
-        self.setMinimumSize(200, 200) 
-        self.setWindowIcon(QIcon(self.get_resource_path("file/favicon-32x32.png")))
+        self.setWindowFlags(Qt.WindowType.WindowMinimizeButtonHint | Qt.WindowType.WindowCloseButtonHint)
+        # self.setMinimumSize(200, 200)
+        self.setFixedSize(self.width(), self.height())
+        self.setWindowIcon(QIcon(self.get_resource_path("file/32x32.png")))
         # 加载图片
-        self.original_pixmap = QPixmap(self.get_resource_path("file/bk_l.png"))
+        self.original_pixmap = QPixmap(self.get_resource_path("file/00.png"))
         
         # 修改标签布局方式
         layout = QVBoxLayout()
